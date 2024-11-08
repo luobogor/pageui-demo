@@ -1,101 +1,89 @@
-import Image from "next/image";
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+import { ChromeIcon, FigmaIcon, GithubIcon, FramerIcon, TwitchIcon, TwitterIcon, GitlabIcon, InstagramIcon, SlackIcon } from 'lucide-react';
+import { LandingMarquee } from '@/components/landing/LandingMarquee';
+import { LandingTestimonialInline } from '@/components/landing/testimonial/LandingTestimonialInline';
+import { LandingTestimonialInlineItem } from '@/components/landing/testimonial/LandingTestimonialInlineItem';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  return (<div>
+    <LandingSocialProofBand>
+  <LandingSocialProofBandItem>
+    100% encrypted and secure
+  </LandingSocialProofBandItem>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+  <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>
+    99% customer satisfaction
+  </LandingSocialProofBandItem>
+</LandingSocialProofBand>
+
+<LandingPrimaryTextCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  textPosition="left"
+  leadingComponent={<LandingProductHuntAward />}
+>
+  <Button size="xl" asChild>
+    <a href="#">
+      Buy now
+    </a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingDiscount
+    className="w-full"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryTextCtaSection>
+
+<LandingMarquee>
+  <ChromeIcon className="w-12 h-12 mx-8" />
+  <FigmaIcon className="w-12 h-12 mx-8" />
+  <GithubIcon className="w-12 h-12 mx-8" />
+  <FramerIcon className="w-12 h-12 mx-8" />
+  <TwitchIcon className="w-12 h-12 mx-8" />
+  <TwitterIcon className="w-12 h-12 mx-8" />
+  <GitlabIcon className="w-12 h-12 mx-8" />
+  <InstagramIcon className="w-12 h-12 mx-8" />
+  <SlackIcon className="w-12 h-12 mx-8" />
+</LandingMarquee>
+
+    <LandingTestimonialInline withBackground variant="secondary">
+  <LandingTestimonialInlineItem
+    imageSrc="https://picsum.photos/id/64/100/100"
+    name="John Doe"
+    text="I love this app"
+  />
+
+  <LandingTestimonialInlineItem
+    imageSrc="https://picsum.photos/id/65/100/100"
+    name="Jane Doe"
+    text="Best app on the market"
+  />
+
+  <LandingTestimonialInlineItem
+    imageSrc="https://picsum.photos/id/669/100/100"
+    name="Alice Doe"
+    text="Never seen anything like it"
+    suffix="CEO of Instagram"
+  />
+
+  <LandingTestimonialInlineItem
+    imageSrc="https://picsum.photos/id/829/100/100"
+    name="Guido Ross"
+    text="Nothing comes close to it"
+    suffix="DevOps at Meta"
+  />
+</LandingTestimonialInline>
+  </div>)
 }
